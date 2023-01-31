@@ -4,26 +4,9 @@ import math
 class Solution:
     def monkeyMove(self, n: int) -> int:
         #num = 2 ** n
-
-        result = 1
-        x=2
-        while (n > 0):
-            if (n % 2 == 0):
-                x = x * x
-                n = n / 2
-
-            else:
-                result = result * x
-                n = n - 1
-
-            if result>(10 ** 9 + 7):
-                result=result%(10 ** 9 + 7)
-        result -= 2
-
-        if result > 0:
-            return result
-        else:
-            return result + 1000000007
+        mod=1000000007
+        ret=pow(2,n,mod)-2
+        return (ret+1000000007)%mod
 
 
 if __name__ == '__main__':
