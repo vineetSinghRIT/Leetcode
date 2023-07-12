@@ -1,5 +1,5 @@
 from operator import mod
-
+from typing import  List
 
 class Solution:
     def numberOfGoodSubarraySplits(self, nums: List[int]) -> int:
@@ -9,11 +9,8 @@ class Solution:
             if nums[i] == 1:
                 pos.append(i)
 
-        if len(pos) == 0:
-            return 0
-
-        if len(pos) == 1:
-            return 1
+        if len(pos) == 0 or len(pos) == 1:
+            return len(pos)
 
         result = 1
         for i in range(1, len(pos)):
